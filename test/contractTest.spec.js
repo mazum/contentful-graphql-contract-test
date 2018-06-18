@@ -26,15 +26,18 @@ test('All contracts should be intact', function (done) {
     })
   })
   .then((object) => {
-    let schemaTest = []
+    let schemaTests = []
     object.filenames.forEach((filename) => {
-      schemaTest.push(new Promise(resolve => {
+      schemaTests.push(new Promise(resolve => {
         readFile(`./test/queries/${filename}`, 'utf8')
         .then((query) => {
           const queryAST = parse(query)
           const errors = validate(object.schema, queryAST)
           const isValid = !errors.length
-          expect(isValid).toBe(true)
+          if (errors.length) {
+            console.log(`There is an issue with ${filename}. With actual error message as follows:\n${errors}`)
+          }
+          expect(isValid).toBeTruthy()
           resolve()
         })
         .catch((err) => {
@@ -42,7 +45,7 @@ test('All contracts should be intact', function (done) {
         })
       }))
     })
-    return Promise.all(schemaTest)
+    return Promise.all(schemaTests)
   })
   .then(() => done())
   .catch((err) => {
