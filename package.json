@@ -12,7 +12,6 @@
   "devDependencies": {
     "bluebird": "^3.5.1",
     "cf-graphql": "^0.5.0",
-    "graphql": "^0.13.2",
     "jest": "^23.1.0",
     "standard": "^11.0.1"
   },
