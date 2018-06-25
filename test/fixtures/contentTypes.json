@@ -1,0 +1,230 @@
+[
+  {
+    "sys": {
+      "space": {
+        "sys": {
+          "type": "Link",
+          "linkType": "Space",
+          "id": "n3jff4ovg4nx"
+        }
+      },
+      "id": "testComponent",
+      "type": "ContentType",
+      "createdAt": "2018-03-29T00:26:21.226Z",
+      "updatedAt": "2018-06-04T05:21:51.991Z",
+      "environment": {
+        "sys": {
+          "id": "master",
+          "type": "Link",
+          "linkType": "Environment"
+        }
+      },
+      "createdBy": {
+        "sys": {
+          "type": "Link",
+          "linkType": "User",
+          "id": "6YHRvR6CE00553wUYaZy3u"
+        }
+      },
+      "updatedBy": {
+        "sys": {
+          "type": "Link",
+          "linkType": "User",
+          "id": "3Q57xX8UUiPJiRPzPmuXBc"
+        }
+      },
+      "publishedCounter": 12,
+      "version": 24,
+      "publishedBy": {
+        "sys": {
+          "type": "Link",
+          "linkType": "User",
+          "id": "3Q57xX8UUiPJiRPzPmuXBc"
+        }
+      },
+      "publishedVersion": 23,
+      "firstPublishedAt": "2018-03-29T00:26:21.865Z",
+      "publishedAt": "2018-06-04T05:21:51.991Z"
+    },
+    "displayField": "name",
+    "name": "TestComponent",
+    "description": "Test Content model.",
+    "fields": [
+      {
+        "id": "name",
+        "name": "Name",
+        "type": "Symbol",
+        "localized": false,
+        "required": true,
+        "validations": [],
+        "disabled": false,
+        "omitted": false
+      },
+      {
+        "id": "testSpots",
+        "name": "TestSpots",
+        "type": "Array",
+        "localized": false,
+        "required": false,
+        "validations": [],
+        "disabled": false,
+        "omitted": false,
+        "items": {
+          "type": "Link",
+          "validations": [
+            {
+              "linkContentType": [
+                "homeTestSpot"
+              ]
+            }
+          ],
+          "linkType": "Entry"
+        }
+      }
+    ]
+  },
+  {
+    "sys": {
+      "space": {
+        "sys": {
+          "type": "Link",
+          "linkType": "Space",
+          "id": "n3jff4ovg4nx"
+        }
+      },
+      "id": "homeTestSpot",
+      "type": "ContentType",
+      "createdAt": "2018-03-29T00:21:05.105Z",
+      "updatedAt": "2018-05-31T00:06:36.060Z",
+      "environment": {
+        "sys": {
+          "id": "master",
+          "type": "Link",
+          "linkType": "Environment"
+        }
+      },
+      "createdBy": {
+        "sys": {
+          "type": "Link",
+          "linkType": "User",
+          "id": "6YHRvR6CE00553wUYaZy3u"
+        }
+      },
+      "updatedBy": {
+        "sys": {
+          "type": "Link",
+          "linkType": "User",
+          "id": "2KZfLEkEXYwJNMB4xF01gU"
+        }
+      },
+      "publishedCounter": 7,
+      "version": 14,
+      "publishedBy": {
+        "sys": {
+          "type": "Link",
+          "linkType": "User",
+          "id": "2KZfLEkEXYwJNMB4xF01gU"
+        }
+      },
+      "publishedVersion": 13,
+      "firstPublishedAt": "2018-03-29T00:21:05.733Z",
+      "publishedAt": "2018-05-31T00:06:36.060Z"
+    },
+    "displayField": "title",
+    "name": "HomeTestSpot",
+    "description": "Test Config for home page.",
+    "fields": [
+      {
+        "id": "title",
+        "name": "Title",
+        "type": "Symbol",
+        "localized": false,
+        "required": false,
+        "validations": [],
+        "disabled": false,
+        "omitted": false
+      },
+      {
+        "id": "displayTitle",
+        "name": "displayTitle",
+        "type": "Symbol",
+        "localized": false,
+        "required": false,
+        "validations": [],
+        "disabled": false,
+        "omitted": false
+      },
+      {
+        "id": "masterEventId",
+        "name": "masterEventID",
+        "type": "Integer",
+        "localized": false,
+        "required": true,
+        "validations": [
+          {
+            "unique": true
+          }
+        ],
+        "disabled": false,
+        "omitted": false
+      },
+      {
+        "id": "eventId",
+        "name": "eventID",
+        "type": "Integer",
+        "localized": false,
+        "required": true,
+        "validations": [
+          {
+            "unique": true
+          }
+        ],
+        "disabled": false,
+        "omitted": false
+      },
+      {
+        "id": "backgroundImage",
+        "name": "backgroundImage",
+        "type": "Link",
+        "localized": false,
+        "required": true,
+        "validations": [
+          {
+            "linkMimetypeGroup": [
+              "image"
+            ]
+          },
+          {
+            "assetFileSize": {
+              "min": null,
+              "max": 512000
+            }
+          }
+        ],
+        "disabled": false,
+        "omitted": false,
+        "linkType": "Asset"
+      },
+      {
+        "id": "publishAt",
+        "name": "Publish Start Time",
+        "type": "Date",
+        "localized": false,
+        "required": true,
+        "validations": [],
+        "disabled": false,
+        "omitted": false
+      },
+      {
+        "id": "unpublishAt",
+        "name": "Publish End Time",
+        "type": "Date",
+        "localized": false,
+        "required": true,
+        "validations": [],
+        "disabled": false,
+        "omitted": false
+      }
+    ]
+  }
+]

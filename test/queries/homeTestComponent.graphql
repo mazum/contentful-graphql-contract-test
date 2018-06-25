@@ -1,0 +1,15 @@
+{
+    testComponents(q: "") {
+        testSpots {
+            __typename
+            title
+            displayTitle
+            backgroundImage {
+                __typename
+                title
+                description
+                url
+            }
+        }
+    }
+}
