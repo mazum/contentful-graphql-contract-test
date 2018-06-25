@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest",
+    "test": "npm run update:schema && npm run test:contracts",
+    "test:contracts": "jest",
+    "update:schema": "node test/tools/updateSchema.js",
     "lint": "standard"
   },
   "author": "Abhi",
